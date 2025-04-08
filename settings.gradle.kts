@@ -20,5 +20,9 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "WeatherNowAndLater"
-include(":app")
- 
+include(":app", ":core", ":data")
+include(":features:cityinput", ":features:currentweather", ":features:forecast")
+
+project(":features:cityinput").projectDir = file("features/cityinput")
+project(":features:currentweather").projectDir = file("features/currentweather")
+project(":features:forecast").projectDir = file("features/forecast")
