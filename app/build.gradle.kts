@@ -64,4 +64,6 @@ dependencies {
     kapt(libs.hilt.compiler)
     // Navigation
     implementation(libs.navigation.compose)
+
+    implementation(project(":features:cityinput"))
 }

@@ -7,9 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.vodafonetask.weathernowandlater.ui.MainScreen
+import com.vodafonetask.cityinput.presentation.ui.CityInputScreen
 import com.vodafonetask.weathernowandlater.ui.theme.WeatherNowAndLaterTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,9 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController, startDestination = "main") {
                     composable("main") {
-                        MainScreen()
+                        CityInputScreen { cityName ->
+                            println("user searched for $cityName")
+                        }
                     }
                 }
             }
