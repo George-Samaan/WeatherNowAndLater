@@ -19,9 +19,16 @@ class CityInputViewModel @Inject constructor(
     private val _cityName = MutableStateFlow("")
     val cityName: StateFlow<String> = _cityName
 
+    private val _navigateToWeather = MutableStateFlow<String?>(null)
+    val navigateToWeather: StateFlow<String?> = _navigateToWeather
+
     init {
         viewModelScope.launch {
-            _cityName.value = getLastCityUseCase()
+            val savedCity = getLastCityUseCase()
+            if (!savedCity.isNullOrBlank()) {
+                _cityName.value = savedCity
+                _navigateToWeather.value = savedCity
+            }
         }
     }
 
