@@ -1,7 +1,7 @@
-package com.vodafonetask.currentweather.domain.repository
+package com.vodafonetask.currentweather.domain.repo
 
 import com.vodafonetask.currentweather.domain.model.WeatherInfo
 
-interface WeatherRepository {
+interface CurrentWeatherRepo {
     suspend fun getCurrentWeather(city: String): WeatherInfo
 }
