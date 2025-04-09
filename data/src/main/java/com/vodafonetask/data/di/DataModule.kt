@@ -1,9 +1,9 @@
-package com.vodafonetask.currentweather.di
+package com.vodafonetask.data.di
 
-import com.vodafonetask.currentweather.data.remote.WeatherApiService
-import com.vodafonetask.currentweather.data.repository.WeatherRepositoryImpl
-import com.vodafonetask.currentweather.domain.repository.WeatherRepository
-import dagger.Binds
+import com.vodafonetask.data.BuildConfig
+import com.vodafonetask.data.remote.WeatherRemoteDataSource
+import com.vodafonetask.data.remote.WeatherRemoteDataSourceImpl
+import com.vodafonetask.data.remote.api.WeatherApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object WeatherModule {
+object DataModule {
+    @Provides
+    @Named("weather_api_key")
+    fun provideApiKey(): String = BuildConfig.OPEN_WEATHER_API_KEY
+
     @Provides
     @Singleton
     fun provideWeatherApi(): WeatherApiService {
@@ -25,15 +29,14 @@ object WeatherModule {
             .build()
             .create(WeatherApiService::class.java)
     }
-}
 
-@Module
-@InstallIn(SingletonComponent::class)
-abstract class WeatherRepoModule {
-
-    @Binds
+    @Provides
     @Singleton
-    abstract fun bindWeatherRepository(
-        impl: WeatherRepositoryImpl
-    ): WeatherRepository
+    fun provideWeatherRemoteDataSource(
+        api: WeatherApiService,
+        @Named("weather_api_key") apiKey: String
+    ): WeatherRemoteDataSource {
+        return WeatherRemoteDataSourceImpl(api, apiKey)
+    }
+
 }

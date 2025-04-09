@@ -57,4 +57,6 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+
+    implementation(project(":data"))
 }
