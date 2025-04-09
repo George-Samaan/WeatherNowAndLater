@@ -1,7 +1,7 @@
 package com.vodafonetask.cityinput.di
 
-import com.vodafonetask.cityinput.data.repository.CityInputRepositoryImpl
-import com.vodafonetask.cityinput.domain.repository.CityInputRepository
+import com.vodafonetask.cityinput.data.repo.CityInputRepositoryImpl
+import com.vodafonetask.cityinput.domain.repo.CityInputRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
