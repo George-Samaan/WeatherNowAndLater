@@ -15,7 +15,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object DataModule {
+object RemoteDataModule {
     @Provides
     @Named("weather_api_key")
     fun provideApiKey(): String = BuildConfig.OPEN_WEATHER_API_KEY
