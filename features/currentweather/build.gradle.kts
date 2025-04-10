@@ -58,4 +58,5 @@ dependencies {
     implementation(libs.lottie.compose)
 
     implementation(project(":data"))
+    implementation(project(":core"))
 }

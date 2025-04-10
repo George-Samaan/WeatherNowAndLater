@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.vodafonetask.core.utils.WeatherImage
 import com.vodafonetask.currentweather.domain.model.WeatherInfo
 
 @Composable
@@ -30,7 +31,7 @@ fun CurrentWeatherContent(
         Row(
             modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
         ) {
-            WeatherLottie(description = weather.condition, modifier = Modifier.size(160.dp))
+            WeatherLottie(description = weather.condition, modifier = Modifier.size(150.dp))
             Spacer(modifier = Modifier.width(50.dp))
             Column(
                 horizontalAlignment = Alignment.Start
@@ -44,7 +45,7 @@ fun CurrentWeatherContent(
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = "${weather.temperature}°C",
-                    style = MaterialTheme.typography.headlineMedium
+                    style = MaterialTheme.typography.headlineSmall
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Row(
@@ -52,7 +53,7 @@ fun CurrentWeatherContent(
                 ) {
                     Text(
                         text = weather.condition.replaceFirstChar { it.uppercase() },
-                        style = MaterialTheme.typography.headlineMedium
+                        style = MaterialTheme.typography.bodyLarge
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     WeatherImage(iconCode = weather.iconUrl, modifier = Modifier.size(28.dp))

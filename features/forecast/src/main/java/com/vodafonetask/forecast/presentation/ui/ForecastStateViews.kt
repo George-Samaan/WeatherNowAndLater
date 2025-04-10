@@ -40,7 +40,7 @@ fun ForecastSuccessView(forecastList: List<DailyForecast>) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(forecastList.size) { index ->
             ForecastItem(forecastList[index])
