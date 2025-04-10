@@ -6,6 +6,7 @@ data class ForecastApiDto(
 
 data class ForecastItemDto(
     val dt: Long,
+    val dt_txt: String,
     val main: MainDto,
     val weather: List<WeatherDescriptionDto>
 )

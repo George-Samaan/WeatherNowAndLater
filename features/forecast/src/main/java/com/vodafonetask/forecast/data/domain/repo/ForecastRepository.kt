@@ -1,7 +1,7 @@
 package com.vodafonetask.forecast.data.domain.repo
 
-import com.vodafonetask.forecast.data.domain.model.ForecastInfo
+import com.vodafonetask.forecast.data.domain.model.DailyForecast
 
 interface ForecastRepository {
-    suspend fun getForecast(city: String): List<ForecastInfo>
+    suspend fun getForecast(city: String): List<DailyForecast>
 }

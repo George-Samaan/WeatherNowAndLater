@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.vodafonetask.forecast.data.domain.model.ForecastInfo
+import com.vodafonetask.forecast.data.domain.model.DailyForecast
 
 @Composable
 fun ForecastLoadingView(){
@@ -35,15 +35,15 @@ fun ForecastEmptyView() {
 }
 
 @Composable
-fun ForecastSuccessView(forecastList: List<ForecastInfo>) {
+fun ForecastSuccessView(forecastList: List<DailyForecast>) {
     LazyColumn (
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        items(forecastList.size) { forecast ->
-            ForecastItem(forecastList[forecast])
+        items(forecastList.size) { index ->
+            ForecastItem(forecastList[index])
         }
     }
 }
