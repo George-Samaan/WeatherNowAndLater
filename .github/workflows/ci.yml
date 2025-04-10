@@ -28,18 +28,24 @@ jobs:
       - name: Cache Gradle dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Set up Gradle
+      # Set up Gradle wrapper
       - name: Set up Gradle
         uses: gradle/wrapper-validation-action@v1
 
+      # Display Gradle version
+      - name: Display Gradle Version
+        run: ./gradlew --version
+
       # Build the APK
       - name: Build Release APK
-        run: ./gradlew buildRelease
+        run: ./gradlew assembleRelease
 
       # Run Unit Tests
       - name: Run unit tests
