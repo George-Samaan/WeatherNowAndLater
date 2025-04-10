@@ -70,6 +70,8 @@ dependencies {
     // Coil
     implementation(libs.coil.compose)
 
+    //My Core Library
+    implementation("com.vodafonetask.weather:core:1.0.0")
+
     implementation(project(":data"))
-    implementation(project(":core"))
 }
