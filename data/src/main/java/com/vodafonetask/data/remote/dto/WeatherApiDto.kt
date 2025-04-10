@@ -1,4 +1,4 @@
-package com.vodafonetask.data.remote.model
+package com.vodafonetask.data.remote.dto
 
 data class WeatherApiDto(
     val main: Main,

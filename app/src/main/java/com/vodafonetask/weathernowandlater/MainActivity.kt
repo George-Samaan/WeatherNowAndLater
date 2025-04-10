@@ -8,7 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.vodafonetask.cityinput.presentation.ui.CityInputScreen
-import com.vodafonetask.currentweather.presentation.ui.CurrentWeatherScreen
+import com.vodafonetask.weathernowandlater.ui.CombinedWeatherScreen
 import com.vodafonetask.weathernowandlater.ui.theme.WeatherNowAndLaterTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,14 +23,14 @@ class MainActivity : ComponentActivity() {
                 NavHost(navController, startDestination = "cityInput") {
                     composable("cityInput") {
                         CityInputScreen { cityName ->
-                            navController.navigate("currentWeather/$cityName")
+                            navController.navigate("combinedScreen/$cityName")
                         }
                     }
 
-                    composable("currentWeather/{city}") { backStackEntry ->
-                        val cityName = backStackEntry.arguments?.getString("city")
-                        if (cityName != null) {
-                            CurrentWeatherScreen(city = cityName)
+                    composable("combinedScreen/{city}") { backStackEntry ->
+                        val city = backStackEntry.arguments?.getString("city")
+                        if (city != null) {
+                            CombinedWeatherScreen(city = city)
                         }
                     }
                 }
