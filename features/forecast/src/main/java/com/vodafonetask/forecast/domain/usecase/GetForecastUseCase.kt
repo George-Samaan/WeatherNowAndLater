@@ -1,7 +1,7 @@
-package com.vodafonetask.forecast.data.domain.usecase
+package com.vodafonetask.forecast.domain.usecase
 
-import com.vodafonetask.forecast.data.domain.model.DailyForecast
-import com.vodafonetask.forecast.data.domain.repo.ForecastRepository
+import com.vodafonetask.forecast.domain.model.DailyForecast
+import com.vodafonetask.forecast.domain.repo.ForecastRepository
 import javax.inject.Inject
 
 class GetForecastUseCase @Inject constructor(

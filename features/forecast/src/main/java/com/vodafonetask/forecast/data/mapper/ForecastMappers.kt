@@ -1,7 +1,7 @@
 package com.vodafonetask.forecast.data.mapper
 
 import com.vodafonetask.data.remote.dto.ForecastApiDto
-import com.vodafonetask.forecast.data.domain.model.DailyForecast
+import com.vodafonetask.forecast.domain.model.DailyForecast
 import java.text.SimpleDateFormat
 import java.util.Locale
 

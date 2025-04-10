@@ -18,7 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.vodafonetask.core.utils.WeatherImage
-import com.vodafonetask.forecast.data.domain.model.DailyForecast
+import com.vodafonetask.forecast.domain.model.DailyForecast
 
 @Composable
 fun ForecastItem(forecast: DailyForecast) {

@@ -36,6 +36,7 @@ fun CityInputScreen(
     LaunchedEffect(cityToNavigate) {
         cityToNavigate?.let {
             onSearchClicked(it)
+            viewModel.onNavigated()
         }
     }
     Box(

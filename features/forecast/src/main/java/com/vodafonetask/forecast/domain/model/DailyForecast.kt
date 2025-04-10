@@ -1,4 +1,4 @@
-package com.vodafonetask.forecast.data.domain.model
+package com.vodafonetask.forecast.domain.model
 
 data class DailyForecast(
     val dayOfWeek: String,
