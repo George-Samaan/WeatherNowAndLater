@@ -81,10 +81,8 @@ The project uses GitHub Actions for the CI/CD pipeline. The CI configuration is 
 
 ## Screenshots
 
-Below are key screenshots of the app arranged side-by-side:
-
-| ![City Input Screen](![Image](https://github.com/user-attachments/assets/76ebf582-1320-46ba-979f-e3d47b446696)) | ![Current Weather Screen](![Image](https://github.com/user-attachments/assets/fdc4589b-859e-4f5c-800c-2c66ee209d9f)) | ![Forecast Screen](![Image](https://github.com/user-attachments/assets/5ba4cb52-ab8f-4c2e-b4b8-f9175a40c570)) |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| ![City Input Screen](https://github.com/user-attachments/assets/76ebf582-1320-46ba-979f-e3d47b446696) | ![Current Weather Screen](https://github.com/user-attachments/assets/fdc4589b-859e-4f5c-800c-2c66ee209d9f) | ![Forecast Screen](https://github.com/user-attachments/assets/5ba4cb52-ab8f-4c2e-b4b8-f9175a40c570) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 ---
 
