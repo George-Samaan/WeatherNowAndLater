@@ -47,11 +47,11 @@ fun ForecastItem(forecast: DailyForecast) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Min Temp: ${forecast.minTemp}°C",
+                    text = "Low: ${forecast.minTemp}°C",
                     style = MaterialTheme.typography.bodyMedium
                 )
                 Text(
-                    text = "Max Temp: ${forecast.maxTemp}°C",
+                    text = "High: ${forecast.maxTemp}°C",
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
