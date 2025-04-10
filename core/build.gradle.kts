@@ -52,22 +52,22 @@ dependencies {
     implementation(libs.coil.compose)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                groupId = "com.vodafonetask.weather"
-                artifactId = "core"
-                version = "1.0.0"
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.vodafonetask.weather"
+            artifactId = "core"
+            version = "1.0.0"
 
-                artifact("$buildDir/outputs/aar/core-release.aar") {
-                    builtBy(tasks.named("assembleRelease"))
-                }
+            afterEvaluate {
+                from(components["release"])
             }
         }
+    }
 
-        repositories {
-            mavenLocal()
+    repositories {
+        maven {
+            url = uri("${rootProject.buildDir}/local-maven-repo")
         }
     }
 }

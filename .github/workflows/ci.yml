@@ -1,12 +1,11 @@
+# GitHub Actions - Android CI with local Maven publishing
 name: Android CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
@@ -15,7 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Set up JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -25,7 +23,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      # Cache Gradle dependencies
       - name: Cache Gradle dependencies
         uses: actions/cache@v3
         with:
@@ -36,21 +33,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Build APK with Gradle (Debug mode)
-      - name: Build with Gradle
+      - name: Publish core module to local Maven
+        run: ./gradlew :core:publishReleasePublicationToMavenRepository
+
+      - name: Build APK
         run: ./gradlew assembleDebug
 
-      # Run unit tests
-      - name: Run unit tests
+      - name: Run Unit Tests
         run: ./gradlew testDebugUnitTest
 
-      # Print APK paths for debugging (Important!)
-      - name: Print APK paths
-        run: |
-          echo "Finding APK files:"
-          find . -name "*.apk"
+      - name: Find APK files
+        run: find . -name "*.apk"
 
-      # Upload APK artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
