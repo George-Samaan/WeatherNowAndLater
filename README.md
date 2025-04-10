@@ -90,7 +90,7 @@ The project uses GitHub Actions for the CI/CD pipeline. The CI configuration is 
 
 ### Prerequisites
 - **Android Studio** or your preferred IDE.
-- **JDK 17** installed locally.
+- **JDK 11** installed locally.
 - Gradle version as specified in `gradle-wrapper.properties`.
 - GitHub Actions is configured to run CI/CD automatically on push.
 
