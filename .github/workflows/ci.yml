@@ -36,17 +36,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # Build APK with Gradle
+      # Build APK with Gradle (Debug mode)
       - name: Build with Gradle
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleDebug
 
       # Run unit tests
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
 
-      # Upload APK artifact (updated to v4)
+      # Print APK paths for debugging (Important!)
+      - name: Print APK paths
+        run: |
+          echo "Finding APK files:"
+          find . -name "*.apk"
+
+      # Upload APK artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: release-apk
+          name: debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
