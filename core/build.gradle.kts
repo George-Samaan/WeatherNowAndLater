@@ -2,8 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id ("kotlin-kapt")
-    id ("dagger.hilt.android.plugin")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
     id("maven-publish")
 }
 group = "com.vodafonetask.weather"
@@ -67,7 +67,7 @@ publishing {
 
     repositories {
         maven {
-            mavenLocal()
+            url = uri("${rootProject.buildDir}/local-maven-repo")
         }
     }
 }
