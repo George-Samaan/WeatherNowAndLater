@@ -17,11 +17,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up JDK 11
-      - name: Set up JDK 11
+      # Set up JDK 17
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
 
       # Cache Gradle dependencies
@@ -50,3 +50,10 @@ jobs:
       # Run Unit Tests
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
+
+      # Upload the APK as an artifact
+      - name: Upload APK as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: weather-now-later-release-apk
+          path: app/build/outputs/apk/release/app-release.apk
