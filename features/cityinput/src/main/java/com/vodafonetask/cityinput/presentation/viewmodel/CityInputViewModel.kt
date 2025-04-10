@@ -42,4 +42,8 @@ class CityInputViewModel @Inject constructor(
         _cityName.value = ""
         return cityName
     }
+
+    fun onNavigated() {
+        _navigateToWeather.value = null
+    }
 }

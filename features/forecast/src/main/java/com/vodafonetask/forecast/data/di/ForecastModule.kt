@@ -1,9 +1,9 @@
 package com.vodafonetask.forecast.data.di
 
 import com.vodafonetask.data.remote.WeatherRemoteDataSource
-import com.vodafonetask.forecast.data.domain.repo.ForecastRepository
-import com.vodafonetask.forecast.data.domain.usecase.GetForecastUseCase
 import com.vodafonetask.forecast.data.repo.ForecastRepositoryImpl
+import com.vodafonetask.forecast.domain.repo.ForecastRepository
+import com.vodafonetask.forecast.domain.usecase.GetForecastUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

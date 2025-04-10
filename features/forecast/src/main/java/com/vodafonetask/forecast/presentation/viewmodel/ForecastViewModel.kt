@@ -2,8 +2,8 @@ package com.vodafonetask.forecast.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vodafonetask.forecast.data.domain.model.DailyForecast
-import com.vodafonetask.forecast.data.domain.usecase.GetForecastUseCase
+import com.vodafonetask.forecast.domain.model.DailyForecast
+import com.vodafonetask.forecast.domain.usecase.GetForecastUseCase
 import com.vodafonetask.forecast.presentation.mvi.ForecastEffect
 import com.vodafonetask.forecast.presentation.mvi.ForecastEvent
 import com.vodafonetask.forecast.presentation.mvi.ForecastIntent

@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.vodafonetask.forecast.data.domain.model.DailyForecast
+import com.vodafonetask.forecast.domain.model.DailyForecast
 
 @Composable
 fun ForecastLoadingView(){
@@ -40,7 +40,7 @@ fun ForecastSuccessView(forecastList: List<DailyForecast>) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(forecastList.size) { index ->
             ForecastItem(forecastList[index])
