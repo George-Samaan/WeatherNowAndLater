@@ -4,7 +4,10 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id ("kotlin-kapt")
     id ("dagger.hilt.android.plugin")
+    id("maven-publish")
 }
+group = "com.vodafonetask.weather"
+version = "1.0.0"
 
 android {
     namespace = "com.vodafonetask.core"
@@ -47,4 +50,24 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.vodafonetask.weather"
+                artifactId = "core"
+                version = "1.0.0"
+
+                artifact("$buildDir/outputs/aar/core-release.aar") {
+                    builtBy(tasks.named("assembleRelease"))
+                }
+            }
+        }
+
+        repositories {
+            mavenLocal()
+        }
+    }
 }

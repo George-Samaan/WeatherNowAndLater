@@ -3,6 +3,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath(libs.hilt.android.gradle.plugin)
