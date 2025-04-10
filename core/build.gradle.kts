@@ -67,7 +67,7 @@ publishing {
 
     repositories {
         maven {
-            url = uri("${rootProject.buildDir}/local-maven-repo")
+            mavenLocal()
         }
     }
 }

@@ -3,7 +3,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("${rootProject.buildDir}/local-maven-repo") }
+        mavenLocal()
     }
     dependencies {
         classpath(libs.hilt.android.gradle.plugin)

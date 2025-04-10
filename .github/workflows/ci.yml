@@ -33,14 +33,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Publish core module to local Maven
-        run: ./gradlew :core:publishReleasePublicationToMavenRepository
-
-      - name: Build APK
-        run: ./gradlew assembleDebug
-
-      - name: Run Unit Tests
-        run: ./gradlew testDebugUnitTest
+      - name: Publish core, build APK, and run tests
+        run: ./gradlew :core:publishToMavenLocal assembleDebug testDebugUnitTest
 
       - name: Find APK files
         run: find . -name "*.apk"
