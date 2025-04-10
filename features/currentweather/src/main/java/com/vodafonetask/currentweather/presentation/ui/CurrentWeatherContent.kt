@@ -25,7 +25,7 @@ fun CurrentWeatherContent(
     ) {
         Text(text = city, style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(8.dp))
-        WeatherImage(url = weather.iconUrl)
+        WeatherImage(iconCode = weather.iconUrl)
         Spacer(modifier = Modifier.height(8.dp))
         Text(text = "${weather.temperature}°C", style = MaterialTheme.typography.headlineLarge)
         Text(text = weather.condition, style = MaterialTheme.typography.bodyLarge)
