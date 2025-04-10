@@ -30,8 +30,8 @@ The project is divided into the following modules:
 - **App Module:**  
   Contains the main entry point of the application including the `MainActivity`, which hosts the navigation graph and combined screens that integrate UI components from feature modules.
 
-- **Core Module:**  
-  Provides common utilities such as reusable Composables (e.g., for weather icons and Lottie animations).
+- **Core Module & Local Library:**  
+  Provides common utilities such as reusable Composables (e.g., for weather icons and Lottie animations). This module is published on Maven Local for easy integration into other projects.
 
 - **Data Module:**  
   Manages remote data sources and DTOs.
