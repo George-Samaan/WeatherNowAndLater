@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Publish core, build APK, and run tests
-        run: ./gradlew :core:publishToMavenLocal assembleDebug testDebugUnitTest
+        run: ./gradlew core:assembleRelease :core:publishToMavenLocal assembleDebug testDebugUnitTest
 
       - name: Find APK files
         run: find . -name "*.apk"
